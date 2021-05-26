@@ -31,7 +31,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 # most_common = Counter(a).most_common(2)
 # print(most_common)
 
-
+print(iris.data)
+print(iris.target)
 for i in range(1, 11):
     clf = KNN(k=i)
     clf.fit(X_train, y_train)

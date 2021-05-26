@@ -32,6 +32,7 @@ class KNN:
 
         # look nearest neghibours (samples,labels)
         k_indicies = np.argsort(distences)[:self.k]
+
         k_nearest_labels = [self.y_train[i] for i in k_indicies]
 
         # get the majority vote
