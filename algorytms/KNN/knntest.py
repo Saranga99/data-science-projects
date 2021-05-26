@@ -1,4 +1,5 @@
 
+from collections import Counter
 import numpy as np
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
@@ -23,3 +24,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 # plt.figure()
 # plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap, edgecolor="k", s=20)
 # plt.show()
+
+a = [1, 2, 1, 2, 2, 4, 2, 3, 3, 3, 2, 1, 1]
+most_common = Counter(a).most_common(2)
+print(most_common)
