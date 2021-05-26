@@ -1,4 +1,5 @@
 
+from knn import KNN
 from collections import Counter
 import numpy as np
 from sklearn import datasets
@@ -25,6 +26,15 @@ X_train, X_test, y_train, y_test = train_test_split(
 # plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap, edgecolor="k", s=20)
 # plt.show()
 
-a = [1, 2, 1, 2, 2, 4, 2, 3, 3, 3, 2, 1, 1]
-most_common = Counter(a).most_common(2)
-print(most_common)
+# counter module example
+# a = [1, 2, 1, 2, 2, 4, 2, 3, 3, 3, 2, 1, 1]
+# most_common = Counter(a).most_common(2)
+# print(most_common)
+
+
+for i in range(1, 11):
+    clf = KNN(k=i)
+    clf.fit(X_train, y_train)
+    predictions = clf.predict(X_test)
+    acc = np.sum(predictions == y_test)/len(y_test)
+    print(i, " : ", acc)
