@@ -1,4 +1,4 @@
-Year,Month,Day,,,,,,
+Year,Month,Date,Percipitation,MaxTemp,MinTemp
 1979,12,31,-99.9,-99.9,-99.9,,,
 1980,1,1,0,29.9,21.6,,,
 1980,1,2,0,29.9,19.1,,,
