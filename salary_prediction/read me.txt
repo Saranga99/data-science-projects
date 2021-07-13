@@ -1,0 +1,4 @@
+# data scince project from scrach
+
+## data collecting
+## data cleaning
