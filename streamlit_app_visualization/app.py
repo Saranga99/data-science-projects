@@ -22,6 +22,48 @@ st.dataframe(df)
 
 
 df_participant.dropna(inplace=True)
+
+#streamlit section
+department=df["Department"].unique().tolist()
+ages=df["Age"].unique().tolist()
+
+
+age_section=st.slider("Age:",
+                    min_value=min(ages),
+                    max_value=max(ages),
+                    value=(min(ages),max(ages)))
+
+depaertment_selection=st.multiselect("Department:",
+                                    department,
+                                    default=department)
+
+
+#data filtering
+mask=(df["Age"].between(*age_section)) & (df["Department"].isin(depaertment_selection))
+
+number_of_result=df[mask].shape[0]
+st.markdown(f"*Available Results:*{number_of_result}")
+
+
+
+#group dataframe
+df_grouped=df[mask].groupby(by=["Rating"]).count()[["Age"]]
+df_grouped=df_grouped.rename(columns={"Age":"Votes"})
+df_grouped=df_grouped.reset_index()
+
+
+##plotting bar
+bar_chart=px.bar(df_grouped,
+                x="Rating",  
+                y="Votes",
+                text="Votes",
+                template="plotly_white")
+
+#inserting bar chart
+st.plotly_chart(bar_chart)
+
+
+
 #pie chart
 pie_chart=px.pie(df_participant,
                 title="Total No. of Participants",
@@ -30,6 +72,10 @@ pie_chart=px.pie(df_participant,
 
 #inserting ploty chart
 st.plotly_chart(pie_chart)
+
+
+
+
 
 
 
