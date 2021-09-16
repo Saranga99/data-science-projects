@@ -5,4 +5,4 @@ This is My Data Science / Machine Learning  main learning repository and you als
 
 If you want to embed images, this is how you do it:
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Yaktocat](https://scikit-learn.org/stable/_static/ml_map.png)
