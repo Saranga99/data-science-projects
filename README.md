@@ -3,6 +3,6 @@ This is My Data Science / Machine Learning  main learning repository and you als
 
 
 
-If you want to embed images, this is how you do it:
+## ML Roadmap
 
 ![Image of Yaktocat](https://scikit-learn.org/stable/_static/ml_map.png)
