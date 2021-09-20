@@ -23,7 +23,7 @@ st.write("")
 st.subheader("Dataset")
 st.dataframe(df)
 
-st.subheader("Descriptive")
+st.subheader("Data Description")
 st.write(df.describe())
 
 
