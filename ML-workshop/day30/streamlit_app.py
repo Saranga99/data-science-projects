@@ -41,32 +41,40 @@ st.write("Accuracy Score of RandomForestClassifier : ",acc*100," %")
 #user inputs
 st.subheader("Check Your Diabetes Status")
 
-#st.slider(name , min , max , default)
-preg=st.slider("Pregnancies",0,20,0)
-glu=st.slider("Glucose Level",0,200,0)
-bp=st.slider("Blood Preasure",0,130,0)
-skin=st.slider("Skin Thickness",0,100,0)
-ins=st.slider("Insulin Level",0.0,1000.0,0.0)
-bmi=st.slider("BMI",0.0,70.0,0.0)
-dpf=st.slider("DPF ",0.000,3.000,0.000)
-age=st.slider("Age",0,100,0)
 
 
-#inputes for the model
-inputs={"Pregnancies":preg,
-        "Glucose Level":glu,
-        "Blood Preasure":bp,
-        "Skin Thickness":skin,
-        "Insulin Level":ins,
-        "BMI":bmi,
-        "DPF":dpf,
-        "Age":age}
+def user_inputs():
+    #st.slider(name , min , max , default)
+    preg=st.slider("Pregnancies",0,20,0)
+    glu=st.slider("Glucose Level",0,200,0)
+    bp=st.slider("Blood Preasure",0,130,0)
+    skin=st.slider("Skin Thickness",0,100,0)
+    ins=st.slider("Insulin Level",0.0,1000.0,0.0)
+    bmi=st.slider("BMI",0.0,70.0,0.0)
+    dpf=st.slider("DPF ",0.000,3.000,0.000)
+    age=st.slider("Age",0,100,0)
 
-#user inputs as a dataframe
-userInputs=pd.DataFrame(inputs,index=["User Inputs"])
 
-st.write("User Inputs")
+    #inputes for the model
+    inputs={"Pregnancies":preg,
+            "Glucose Level":glu,
+            "Blood Preasure":bp,
+            "Skin Thickness":skin,
+            "Insulin Level":ins,
+            "BMI":bmi,
+            "DPF":dpf,
+            "Age":age}
+
+    #user inputs as a dataframe
+    return pd.DataFrame(inputs,index=["User Inputs"])
+
+#call the function
+userInputs=user_inputs()
+
+st.write("Entered User Inputs")
 st.write(userInputs)
+
+
 
 
 
