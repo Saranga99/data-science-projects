@@ -8,6 +8,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 
 #dataset
@@ -26,6 +28,22 @@ st.dataframe(df)
 #sub header
 st.subheader("Data Description")
 st.write(df.iloc[:,:8].describe())
+
+
+#outcome dectribution
+st.subheader("Destribution of the Target variable in the dataset")
+labels = 'Diabetes', 'Non-Diabetes'
+diabetes = df.query('Outcome == 1').Outcome.count()
+non_diabetes = df.query('Outcome == 0').Outcome.count()
+sizes = [diabetes, non_diabetes]
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, labels=labels, autopct='%1.2f%%',
+        startangle=90)
+ax1.axis('equal')
+fig1 = plt.show()
+st.set_option('deprecation.showPyplotGlobalUse', False)
+st.pyplot(fig1)
+
 
 #machine learning
 st.subheader("Machine Learning")
@@ -72,7 +90,21 @@ def user_inputs():
 userInputs=user_inputs()
 
 st.write("Entered User Inputs")
+#show the user imput dataframe
 st.write(userInputs)
+
+
+st.subheader("Predictions")
+
+output=model.predict(userInputs)
+
+if output[0]==1:
+    st.write("You have Diabetes")
+else:
+    st.write("You haven't Diabetes")
+
+
+
 
 
 
