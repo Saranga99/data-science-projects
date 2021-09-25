@@ -21,12 +21,25 @@ image=Image.open("diabetes.jpg")
 
 #image
 st.image(image)
+
+#description of the context
+st.subheader("Context")
+st.write("The datasets consists of several medical predictor variables and one target variable, Outcome. Predictor variables includes the number of pregnancies the patient has had, their BMI, insulin level, age, and so on.")
+
+#dataset
+st.subheader("Dataset")
+st.write("Dataset : [Pima Indians Diabetes Database](https://www.kaggle.com/uciml/pima-indians-diabetes-database)")
+
+st.subheader("Inspiration")
+st.write("Can you build a machine learning model to accurately predict whether or not the patients in the dataset have diabetes or not?")
+
+
 st.write("")
 st.subheader("Dataset")
 st.dataframe(df)
 
 #sub header
-st.subheader("Data Description")
+st.subheader("Data Description (Statistical Context)")
 st.write(df.iloc[:,:8].describe())
 
 
