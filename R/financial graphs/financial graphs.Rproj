@@ -1,0 +1,36 @@
+library(readxl)
+library(ggplot2)
+library(ggrepel)
+
+
+
+DA_Datasets <- read_excel("DA Datasets.xlsx",sheet = "Revenue", range = "A1:E6")
+
+
+
+f <- ggplot(DA_Datasets,aes(data_rediness,feasibility, size = factor(impact),colour = method, label=pillar_no)) +
+  geom_point(aes(colour = method),alpha=0.8)+#c(Cognitive, Prescriptive,Predictive))
+  scale_color_manual(name = "DA Maturity",
+                     values = c("Prescriptive" = "#6798FB",
+                                "Predictive" = "#581845",
+                                "Diagnostic" = "#215D88"),
+                     labels = c("Prescriptive", "Predictive", "Diagnostic"))+
+  geom_label_repel(
+    # data point size
+    colour="black",
+    size = 5, # font size in the text labels
+    point.padding = 0, # additional padding around each point
+    min.segment.length = 0, # draw all line segments
+    max.time = 1, max.iter = 1e5, # stop after 1 second, or after 100,000 iterations
+    box.padding = 0.8 # additional padding around each text label
+  ) +
+  scale_size_manual(values=c(8,13,20),labels=c("Low","Medium","High"))+
+  #scale up the size of the bubble
+  ylab("Feasibility of Analytic\n") +#rename y axis
+  xlab("\nReadiness of the data")+
+  ggtitle("Revenue: Feasibility of the Analytics vs Readiness of the Data\n")+
+  theme(plot.title = element_text(hjust = 0.5))+#rename x axis
+  xlim(2, 5.2)+ylim(1, 4.5)+
+  #labs(title = "Feasibility of the Analytics vs Readiness of the Data")+
+  guides(size=guide_legend("Business Impact\n"))#Title
+plot(f)
