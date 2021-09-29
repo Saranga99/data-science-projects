@@ -1,39 +1,22 @@
-## Context
+# Context
 
-## What determines the price of used cars?
+## This dataset contains information about used cars.
+This data can be used for a lot of purposes such as price prediction to exemplify the use of linear regression in Machine Learning.
 
-The value of a car drops right from the moment it is bought and the depreciation continues with each passing year. In fact, in the first year itself, the value of a car decreases by 20 percent of its initial value. The make and model of a car, total kilometers driven, overall condition of the vehicle and various other factors further affect the car’s resale value
+### The columns in the given dataset are as follows:
 
+name
 
-# Data Fields
+year
 
-## There are id and 12 characteristics of cars and the price.
+selling_price
 
-Id - Car's id
+km_driven
 
-Name - The brand and model of the car.
+fuel
 
-Location - The location in which the car is being sold or is available for purchase.
+seller_type
 
-Year - The year or edition of the model.
+transmission
 
-Kilometers_Driven - The total kilometers are driven in the car by the previous owner(s) in KM.
-
-Fuel_Type - The type of fuel used by the car. (Petrol, Diesel, Electric, CNG, LPG)
-
-Transmission - The type of transmission used by the car. (Automatic / Manual)
-
-Owner_Type - First, Second, Third, or Fourth & Above
-
-Mileage - The standard mileage offered by the car company in kmpl or km/kg
-
-Engine - The displacement volume of the engine in CC.
-
-Power - The maximum power of the engine in bhp.
-
-Seats - The number of seats in the car.
-
-New_Price - The price of a new car of the same model.
-
-Price - The price of the car (target).
-
+Owner
