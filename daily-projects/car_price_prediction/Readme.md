@@ -9,8 +9,8 @@ The value of a car drops right from the moment it is bought and the depreciation
 
 ## There are id and 12 characteristics of cars and the price.
 
-Id - Car's id
-Name - The brand and model of the car.
+1.Id - Car's id
+2.Name - The brand and model of the car.
 Location - The location in which the car is being sold or is available for purchase.
 Year - The year or edition of the model.
 Kilometers_Driven - The total kilometers are driven in the car by the previous owner(s) in KM.
