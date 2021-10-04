@@ -7,7 +7,7 @@ import nltk
 import re
 
 #header and description
-st.header("Resume Information Extractor")
+st.title("Resume Information Extractor")
 st.write("This Application will extract information from Resumes in .pdf format")
 # file upload
 uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
@@ -85,13 +85,6 @@ else:
     st.error("No file uploaded")
 
 
-# git hub logo and repo link
-st.write("\n")
-st.image(image)
-st.write(
-    " [Git Hub](https://github.com/Saranga99/data-science-projects/tree/main/NLP)")
-
-
 @st.cache(allow_output_mutation=True)
 def load_qa_model():
     model = pipeline("question-answering")
@@ -99,14 +92,23 @@ def load_qa_model():
 
 
 qa = load_qa_model()
-st.title("Ask Questions about your Text")
-sentence = st.text_area('Please paste your article :', height=30)
-question = st.text_input("Questions from this article?")
+st.header("Ask Questions")
+#sentence = st.text_area('Please paste your article :', height=30)
+question = st.text_input("Questions from this CV?")
 button = st.button("Get me Answers")
 max = st.sidebar.slider('Select max', 50, 500, step=10, value=150)
 min = st.sidebar.slider('Select min', 10, 450, step=10, value=50)
 do_sample = st.sidebar.checkbox("Do sample", value=False)
-with st.spinner("Discovering Answers.."):
-    if button and sentence:
-        answers = qa(question=question, context=sentence)
-        st.write(answers['answer'])
+if uploaded_file is not None:
+    with st.spinner("Discovering Answers.."):
+        if button and uploaded_file:
+            answers = qa(question=question,
+                         context=extract_text(uploaded_file))
+            st.write(answers['answer'])
+
+
+# git hub logo and repo link
+st.write("\n")
+st.image(image)
+st.write(
+    " [Git Hub](https://github.com/Saranga99/data-science-projects/tree/main/NLP)")
