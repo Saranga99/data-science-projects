@@ -57,55 +57,59 @@ def extract_mobile_numbers(resume_text):
 print("Please wait buddy... I'm Loading..... :D")
 qa = load_qa_model()
 
-
-while True:
-    try:
-        path = input("Enter Your path Here : ")
-        lines = [extract_text_from_pdf(path)]
-        with open('readme.txt', 'w') as f:
-            for line in lines:
-                f.write(line)
-                # f.write('')
-        break
-    except:
-        print("\nPlease Enter Correct Path\n")
-
-# open written text file and load in a variable
-with open("readme.txt", "r") as myfile:
-    data = myfile.read()
-
-
-# calling methods
-names = extract_names(data)
-if names:
-    print("\n____Extracted Information____\n")
-
-    print("Name           : ", names[3][:-8])
-
-emails = extract_emails(data)
-if emails:
-    print("Email          : ", emails[0])
-
-
-numbers = extract_mobile_numbers(data)
-print("Telephone No.  :", numbers[1][0], "/", numbers[2][0])
-
-
-# QA
 while True:
     user_input = input(
-        "\nPress 'y' to ask question from cv, press 'q' to exit the application : ")
+        "Press any key to add resume path, press 'q' to Exit from the Application : ")
     user_input = user_input.lower()
-    if user_input == "y":
-        question = input("\nAsk Your Question : ")
-        try:
-            answers = qa(question=question, context=data)
-            print("\nAnswer : ", answers['answer'],
-                  "\n", "Score : ", answers["score"])
-        except:
-            print("\nsorry..I Couldn't find any answer :D")
-    elif user_input == "q":
+    if user_input == "q":
         print("\nThank you for using, Stay safe !!!")
         break
     else:
-        print("\nPlease Enter Correct inputs to proceed :D")
+        while True:
+            try:
+                path = input("Enter Your path Here : ")
+                lines = [extract_text_from_pdf(path)]
+                with open('readme.txt', 'w') as f:
+                    for line in lines:
+                        f.write(line)
+                        # f.write('')
+                break
+            except:
+                print("\nPlease Enter Correct Path\n")
+
+        # open written text file and load in a variable
+        with open("readme.txt", "r") as myfile:
+            data = myfile.read()
+
+        # calling methods
+        names = extract_names(data)
+        if names:
+            print("\n____Extracted Information____\n")
+
+            print("Name           : ", names[3][:-8])
+
+        emails = extract_emails(data)
+        if emails:
+            print("Email          : ", emails[0])
+
+        numbers = extract_mobile_numbers(data)
+        print("Telephone No.  :", numbers[1][0], "/", numbers[2][0])
+
+        # QA
+        while True:
+            user_input = input(
+                "\nPress 'y' to ask question from cv, press 'q' Proceed without asking Questions : ")
+            user_input = user_input.lower()
+            if user_input == "y":
+                question = input("\nAsk Your Question : ")
+                try:
+                    answers = qa(question=question, context=data)
+                    print("\nAnswer : ", answers['answer'],
+                          "\n", "Score : ", answers["score"])
+                except:
+                    print("\nsorry..I Couldn't find any answer :D")
+            elif user_input == "q":
+                print("\nThank you for using, Stay safe !!!")
+                break
+            else:
+                print("\nPlease Enter Correct inputs to proceed :D")
