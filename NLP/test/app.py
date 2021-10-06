@@ -102,9 +102,12 @@ do_sample = st.sidebar.checkbox("Do sample", value=False)
 if uploaded_file is not None:
     with st.spinner("Discovering Answers.."):
         if button and uploaded_file:
-            answers = qa(question=question,
-                         context=extract_text(uploaded_file))
-            st.write(answers['answer'])
+            try:
+                answers = qa(question=question,
+                             context=extract_text(uploaded_file))
+                st.write(answers['answer'])
+            except:
+                st.info("Sorry..I Couldn't find any answer :D")
 
 
 # git hub logo and repo link
