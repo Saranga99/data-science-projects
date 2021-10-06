@@ -58,7 +58,7 @@ if btnSave:
     if uploaded_file is not None:
         text = extract_text(uploaded_file)
         lines = [text]
-        with open('streamlit.txt', 'w') as f:
+        with open('resume _text_st.txt', 'w') as f:
             for line in lines:
                 f.write(line)
                 # f.write('')
@@ -93,7 +93,6 @@ def load_qa_model():
 
 qa = load_qa_model()
 st.header("Ask Questions")
-#sentence = st.text_area('Please paste your article :', height=30)
 question = st.text_input("Questions from this CV?")
 # button
 button = st.button("Get me Answers")
@@ -104,13 +103,16 @@ min = st.sidebar.slider('Select min', 10, 450, step=10, value=50)
 do_sample = st.sidebar.checkbox("Do sample", value=False)
 # if file is uploaded this will execute
 if uploaded_file is not None:
+    # getting data
+    text = extract_text(uploaded_file)
     # waitng time to find answe, inform it to user
     with st.spinner("Discovering Answers.."):
         # used try catch because not neccery to show errors in gui
         if button and uploaded_file:
             try:
+                # try to get answers form cv extracted data
                 answers = qa(question=question,
-                             context=extract_text(uploaded_file))
+                             context=text)
                 st.write(answers['answer'])
             except:
                 st.info("Sorry..I Couldn't find any answer :D")

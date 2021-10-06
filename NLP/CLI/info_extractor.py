@@ -61,7 +61,7 @@ qa = load_qa_model()
 # main loop fot the application
 while True:
     user_input = input(
-        "Press any key to add resume path, press 'q' to Exit from the Application : ")
+        "\nPress any key to add resume path, press 'q' to Exit from the Application : ")
     # converting user input to the lowercase
     user_input = user_input.lower()
     if user_input == "q":
@@ -73,9 +73,9 @@ while True:
             # try and try one day you will find the path :D
             try:
                 # eg :- Saranga Kumarapeli.pdf
-                path = input("Enter Your path Here : ")
+                path = input("\nEnter Your path Here : ")
                 lines = [extract_text_from_pdf(path)]
-                with open('readme.txt', 'w') as f:
+                with open('resume_text.txt', 'w') as f:
                     for line in lines:
                         f.write(line)
                         # f.write('')
@@ -84,21 +84,23 @@ while True:
                 print("\nPlease Enter Correct Path\n")
 
         # open written text file and load in a variable
-        with open("readme.txt", "r") as myfile:
+        with open("resume_text.txt", "r") as myfile:
             data = myfile.read()
 
         # calling methods
         names = extract_names(data)
         if names:
             print("\n____Extracted Information____\n")
-
+            # get name from name lsit
             print("Name           : ", names[3][:-8])
 
         emails = extract_emails(data)
         if emails:
+            # get email from email list
             print("Email          : ", emails[0])
 
         numbers = extract_mobile_numbers(data)
+        # get the numbers from  number list
         print("Telephone No.  :", numbers[1][0], "/", numbers[2][0])
 
         # QA module loop, user can ask any nuber of questons until bored
@@ -117,7 +119,7 @@ while True:
                     print("\nsorry..I Couldn't find any answer :D")
             # if this true app will go to main loop
             elif user_input == "q":
-                print("\nThank you for using, Stay safe !!!")
+                # print("\nThank you for using, Stay safe !!!")
                 break
             else:
                 print("\nPlease Enter Correct inputs to proceed :D")
