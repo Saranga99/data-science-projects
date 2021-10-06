@@ -17,6 +17,8 @@ print("\n_____Resume Information Extractor - CLI based Application_____\n")
 def extract_text_from_pdf(pdf_path):
     return extract_text(pdf_path)
 
+# method to import huggingface pipeline
+
 
 def load_qa_model():
     model = pipeline("question-answering")
