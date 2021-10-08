@@ -1,5 +1,7 @@
 import pickle
 import streamlit as st
+# convert text in to feature vectors
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 #header and description
@@ -13,6 +15,9 @@ classifier = pickle.load(pickle_in)
 @st.cache()
 # defining the function which will make the prediction using the data which the user inputs
 def prediction(text):
+    # ocnverting data to numerical data
+    vectorizer = TfidfVectorizer()
+    text = vectorizer.fit_transform(text)
     prediction = classifier.predict([[text]])
     st.write(prediction)
 
