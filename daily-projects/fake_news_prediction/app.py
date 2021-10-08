@@ -11,3 +11,18 @@ classifier = pickle.load(pickle_in)
 
 
 @st.cache()
+# defining the function which will make the prediction using the data which the user inputs
+def prediction(text):
+    prediction = classifier.predict([[text]])
+    st.write(prediction)
+
+
+news = st.text_input("Please Type your News here")
+# button
+button = st.button("Ckeck")
+
+
+with st.spinner("Discovering Answers.."):
+    # used try catch because not neccery to show errors in gui
+    if button:
+        prediction(news)
