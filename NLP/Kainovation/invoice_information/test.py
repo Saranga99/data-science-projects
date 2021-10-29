@@ -1,8 +1,13 @@
 # importings
-from transformers import pipeline
 from pdfminer.high_level import extract_text
-import nltk
+# import nltk
+# import re
+
+import os
+import spacy
 import re
+from dateutil.parser import *
+import textract
 
 # nltk.download('punkt')
 # nltk.download('averaged_perceptron_tagger')
@@ -38,7 +43,10 @@ while True:
                 #     for line in lines:
                 #         f.write(line)
                 #         # f.write('')
-                print(extract_text_from_pdf(path))
+                content = extract_text_from_pdf(path)
+                content = " ".join(content.replace(
+                    u"\xa0", " ").strip().split())
+                print(content)
                 break
             except:
                 print("\nPlease Enter Correct Path\n")
