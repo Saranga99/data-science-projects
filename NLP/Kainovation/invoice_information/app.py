@@ -1,3 +1,12 @@
-from modules import modulem
+import streamlit as st
+import re
+import spacy
+import textract
+import datefinder
 
-modules = modules()
+
+#header and description
+st.title("Invoice Information Extractor")
+st.write("This Application will extract information from Invoices in .pdf format")
+# file upload
+uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
