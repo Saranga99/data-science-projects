@@ -29,7 +29,7 @@ def write_to_txt(text):
 
 def clean_text(text):
     # Convert to string
-    text = text.decode('utf-8')
+    # text = text.decode('utf-8')
     # Replace "\r\n" with spaces
     text = text.replace("\r\n", " ")
     # Remove any double spaces
@@ -49,6 +49,15 @@ def clean_text(text):
     return text
 
 
+# email - regular expression
+EMAIL_REG = re.compile(r'[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+')
+
+
+# extract all emails in input text
+def get_emails(text):
+    return re.findall(EMAIL_REG, text)
+
+
 #header and description
 st.title("Invoice Information Extractor")
 st.write("This Application will extract information from Invoices in .pdf format")
@@ -66,11 +75,14 @@ extract = st.button("Extract Information")
 # method for save to .txt button if file uploaded and saved informaation will be shown
 if extract and uploaded_file is not None:
     # extract type 1
-    # text = extract_text("temp/" + uploaded_file.name)
+    text = extract_text("temp/" + uploaded_file.name)
     # extract type 2
-    text = textract.process("temp/" + uploaded_file.name)
+    #text = textract.process("temp/" + uploaded_file.name)
     st.subheader("text")
     st.write(text)
     cleaned_text = clean_text(text)
     st.subheader("cleaned")
     st.write(cleaned_text)
+    if len(get_emails(cleaned_text)) > 0:
+        st.write("Email          : ", get_emails(cleaned_text)[0])
+    os.remove("temp/" + uploaded_file.name)
