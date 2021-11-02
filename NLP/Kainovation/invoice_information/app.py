@@ -1,5 +1,4 @@
 from datetime import datetime
-import pandas as pd
 import streamlit as st
 import re
 import textract
@@ -107,6 +106,8 @@ def get_mobile_numbers(text):
         phone.append(i)
     for i in re.findall(r"\d{3}-\d{8}|\d{4}-\d{7}", text):
         phone.append(i)
+    for i in re.findall(r"^.*\s([\d\s]{11,14})\s.*$", text):
+        phone.append(i)
     return phone
 
 
@@ -125,21 +126,23 @@ if path is not None and extract:
         text = textract.process(path)
         cleaned_text = clean_text(text)
         type = is_invoice_Or_not(cleaned_text)
-        if type == "invoice":
+        if type == "invoice" or type == "not":
             st.subheader("Cleaned Text from Invoice\n")
             st.write(cleaned_text, "\n")
             st.write("Invoice Number : ",)
             st.write("Email          : ", get_emails(cleaned_text)[0])
             st.write("Mobile Numbers : ", get_mobile_numbers(cleaned_text))
             st.write("Invoice Amount : ", get_invoice_amount(cleaned_text))
-
-            matches = list(datefinder.find_dates(cleaned_text))
-            if len(matches) > 0:
-                # date returned will be a datetime.datetime object. here we are only using the first match.
-                date = matches[0]
-                st.write("Date      : ", date)
-            else:
-                st.write('No dates found')
+            try:
+                matches = list(datefinder.find_dates(cleaned_text))
+                if len(matches) > 0:
+                    # date returned will be a datetime.datetime object. here we are only using the first match.
+                    date = matches[0]
+                    st.write("Date      : ", date)
+                else:
+                    st.write('No dates found')
+            except:
+                st.write("Date      : invalid date")
 
         else:
             st.error("your file is't an invoice")
