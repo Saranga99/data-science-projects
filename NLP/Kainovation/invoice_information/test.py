@@ -38,11 +38,11 @@ while True:
             # try and try one day you will find the path :D
             try:
                 path = input("\nEnter Your path Here : ")
-                # lines = [extract_text_from_pdf(path)]
-                # with open('resume_text.txt', 'w') as f:
-                #     for line in lines:
-                #         f.write(line)
-                #         # f.write('')
+                lines = [extract_text_from_pdf(path)]
+                with open('resume_text.txt', 'w') as f:
+                    for line in lines:
+                        f.write(line)
+                        # f.write('')
                 content = extract_text_from_pdf(path)
                 content = " ".join(content.replace(
                     u"\xa0", " ").strip().split())
