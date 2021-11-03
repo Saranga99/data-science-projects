@@ -6,6 +6,8 @@ import fitz
 import base64
 
 # get the tag position
+
+
 def get_tag_position(tag, text, direction='forward'):
     tag = tag.lower()
     if direction == 'reverse':
@@ -19,6 +21,8 @@ def get_tag_position(tag, text, direction='forward'):
     return start_pos
 
 # phrase amount
+
+
 def parse_amounts(text):
 
     money = re.compile('|'.join([
@@ -125,3 +129,11 @@ class Actions(object):
             base64_pdf = base64.b64encode(f.read()).decode('utf-8')
         pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">'
         st.markdown(pdf_display, unsafe_allow_html=True)
+
+    # getinvoice amount
+    def get_invoice_number(text):
+        text = text.lower()
+        temp_corpus = text[get_tag_position(
+            "Invoice No.", text, direction='reverse'):]
+
+        return temp_corpus

@@ -29,11 +29,12 @@ if extract and uploaded_file is not None:
     col1.header("Invoice Uploaded")
     Actions.show_pdf(path)
 
-    # st.subheader("text")
-    # st.write(text)
+    st.subheader("text")
+    st.write(text)
     cleaned_text = Actions.clean_text(text)
     # st.subheader("cleaned")
     # st.write(cleaned_text)
+    st.write("Invoice No. : ", Actions.get_invoice_number(cleaned_text))
 
     emails = Actions.get_emails(cleaned_text)
     if len(emails) > 0:
