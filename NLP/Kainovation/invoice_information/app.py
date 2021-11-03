@@ -1,10 +1,6 @@
 import streamlit as st
-# from pdfminer.high_level import extract_text
 import os
-# import textract
 from actions import Actions
-import fitz
-from actions import EXTRACTOR
 
 
 # header and description
@@ -21,20 +17,24 @@ if uploaded_file is not None:
 extract = st.button("Extract Information")
 # method for save to .txt button if file uploaded and saved informaation will be shown
 if extract and uploaded_file is not None:
-    # extract type 1
-    # text = extract_text("temp/" + uploaded_file.name)
-    # extract type 2
-    # text = textract.process("temp/" + uploaded_file.name)
-
     # pymu pdf codes
     path = "temp/"+uploaded_file.name
-    text = EXTRACTOR.extract_text(path)
+    text = Actions.extract_text(path)
 
-    st.subheader("text")
-    st.write(text)
+    save_image_path = 'temp/'+uploaded_file.name
+    with open(save_image_path, "wb") as f:
+        f.write(uploaded_file.getbuffer())
+
+    col1, col2 = st.columns(2)
+    col1.header("Invoice Uploaded")
+    Actions.show_pdf(path)
+
+    # st.subheader("text")
+    # st.write(text)
     cleaned_text = Actions.clean_text(text)
-    st.subheader("cleaned")
-    st.write(cleaned_text)
+    # st.subheader("cleaned")
+    # st.write(cleaned_text)
+
     emails = Actions.get_emails(cleaned_text)
     if len(emails) > 0:
         st.write("Email          : ", emails[0])

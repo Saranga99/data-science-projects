@@ -3,10 +3,9 @@ import streamlit as st
 import os
 import datefinder
 import fitz
+import base64
 
 # get the tag position
-
-
 def get_tag_position(tag, text, direction='forward'):
     tag = tag.lower()
     if direction == 'reverse':
@@ -20,8 +19,6 @@ def get_tag_position(tag, text, direction='forward'):
     return start_pos
 
 # phrase amount
-
-
 def parse_amounts(text):
 
     money = re.compile('|'.join([
@@ -43,10 +40,6 @@ class Actions(object):
 
     # clean text
     def clean_text(text):
-        # Convert to string
-        text = text.decode('utf-8')
-        # Replace "\r\n" with spaces
-        text = text.replace("\r\n", ",")
         # Remove any double spaces
         text = re.sub(" +", " ", text)
         # removing new line characters
@@ -116,11 +109,19 @@ class Actions(object):
         except:
             st.write("Date      : invalid date")
 
-
-class EXTRACTOR:
-    def extract_text(self, file_path: str, account: str, file_id: str, s3_path: str):
-        doc = fitz.open(file_path)
-
+    # extract text
+    def extract_text(path):
+        doc = fitz.open(path)
+        text = ""
         for i in range(doc.pageCount):
             page = doc.load_page(i)
-            pagetext = page.get_text("text")
+            pagetext = page.get_text()
+            text += pagetext
+        return text
+
+    # pdf show in interface
+    def show_pdf(file_path):
+        with open(file_path, "rb") as f:
+            base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+        pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">'
+        st.markdown(pdf_display, unsafe_allow_html=True)
