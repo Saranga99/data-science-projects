@@ -1,6 +1,37 @@
 import re
 import streamlit as st
 import os
+import datefinder
+import fitz
+
+# get the tag position
+
+
+def get_tag_position(tag, text, direction='forward'):
+    tag = tag.lower()
+    if direction == 'reverse':
+        tag_pos = text.lower().rfind(tag)
+    else:
+        tag_pos = text.lower().find(tag)
+    if tag_pos > 0:
+        start_pos = tag_pos + len(tag) + 1
+    else:
+        start_pos = -1
+    return start_pos
+
+# phrase amount
+
+
+def parse_amounts(text):
+
+    money = re.compile('|'.join([
+        r"\$?\d+\,?\d+\.\d{1,2} ",  # USD format
+        r"\$\d+\,?\d*\.?\d{1,2} ",  # USD format without decimals
+
+    ]))
+    matches = re.findall(money, text)
+    matches = [i.strip() for i in matches]
+    return matches
 
 
 class Actions(object):
@@ -56,3 +87,40 @@ class Actions(object):
         for i in re.findall(r"^.*\s([\d\s]{11,14})\s.*$", text):
             phone.append(i)
         return phone
+
+   # getinvoice amount
+    def get_invoice_amount(text):
+        text = text.lower()
+        invoice_amount = ""
+        amounts = parse_amounts(text)
+        if len(amounts) > 0:
+            invoice_amount = amounts[-1]
+        else:
+            temp_corpus = text[get_tag_position(
+                "total", text, direction='reverse'):]
+            numbers = re.findall("\d+", temp_corpus)
+            if len(numbers) > 0:
+                invoice_amount = numbers[0]
+        return invoice_amount
+
+    # get dates
+    def get_dates(text):
+        try:
+            matches = list(datefinder.find_dates(text))
+            if len(matches) > 0:
+                # date returned will be a datetime.datetime object. here we are only using the first match.
+                for i in range(len(matches)):
+                    st.write("Date      : ", matches[i])
+            else:
+                st.write('No dates found')
+        except:
+            st.write("Date      : invalid date")
+
+
+class EXTRACTOR:
+    def extract_text(self, file_path: str, account: str, file_id: str, s3_path: str):
+        doc = fitz.open(file_path)
+
+        for i in range(doc.pageCount):
+            page = doc.load_page(i)
+            pagetext = page.get_text("text")
