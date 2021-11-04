@@ -108,8 +108,12 @@ class Actions(object):
         start_index = text.find("invoice date")
         end_index = start_index + len("invoice date")+30
         date = text[start_index:end_index]
-        date = list(datefinder.find_dates(date))
-        return date
+        try:
+            date = list(datefinder.find_dates(date))
+            if len(date) > 0:
+                return date
+        except:
+            return "no"
 
     # extract text
 

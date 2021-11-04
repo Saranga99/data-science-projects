@@ -39,8 +39,10 @@ if extract and uploaded_file is not None:
     Actions.write_to_txt(cleaned_text)
 
     st.write("Invoice No. : ", Actions.get_invoice_number(cleaned_text))
-    date = Actions.get_dates(cleaned_text)[0]
-    st.write(date)
+    if Actions.get_dates(cleaned_text) != "no":
+        date = Actions.get_dates(cleaned_text)[0]
+        st.write("Invoice Date", date)
+
     emails = Actions.get_emails(text)
     if len(emails) > 0:
         st.write("Email          : ", emails[0])
