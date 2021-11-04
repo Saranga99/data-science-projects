@@ -1,0 +1,62 @@
+5 55 34PM      692.00'  1,240.00  10  1,069.2704 )  
+ EnD  '‘'?4D  10, 2.00  10+2.00      
+ GrossValue  Total Discount  VA1  NetValue Rs.  Invoice No.  
+    Invoice Data  
+    W/H Code  Payment Type   Order No   s.  
+ k001 232  10/07/2020  Cl IN  DEL  A44392  305102'  )34440  LR2007 220  ,   
+ of 3  Date II Time  Authorised By  NON TAX INVOICE  Customer Code  Customer Name  Address  ustomer Vat No  ales Rep  100034  HEMAS HOSPITALS  LTD   Wattala  I  
+ NO. 36. BRISTOL STREET. COL  Stock  Consumables  Cl INSR06 Godfrey Bath  10,690.00  10 690.00  Gross Amt.   Deductions    Additions  Net Amount   Oispatth mode  Payment mode   User  6722  Place Of Delivery   Hemas Hospitals  Ltd  396 Necomba Rood  Waddle  In words  LXR TEN THOUSAND SIX HUNDRED NINETY ONLY  Payment Terms   Within 30 Days  Within 45 Days  Delivery 1erms   Qty Department  10  
+ Pur d law   WTL  Item Name  
+ From Date  
+ To Date  purilan Gel  
+ 07 Oct 2020  
+ 07 Oct 2020  Authxised Signatory   Purchase Order  Supplier  
+   Su whine Heald care Lanka Ltd  Address  
+   CiumrnyColombo,  icrribo Sri Larka  Pin Cale  PO No.  PO Date  PO Type  Contact Person  131.1120071306  07 Ott  2020  0005A unable PG  10 Nos  
+ 10 59.00  10,690.00  Other Terms    Other Terms  Note   This purchase order is valid aily for 14 days.P0 not valid without Authorised Signature  Remarks    Page 1 of 1  Authorised Signatory   rbiew.go  II  
+ LOA941  PurIlan Gel  SI.No. Item Code  fIrtherni St bre Mr   Within 45 Days  Cheque  Mode of  Payment  Terms   
+ Gross    
+ 10692 000   
+ Discount    
+ 0.000   
+ Additions    
+ 0.000  Net Amount  
+ 10692.000  Checked a  
+ erified By  
+ Approved By   nd oe///  eceived By   Goods Receipt Note  Supplier  
+  Sunshine Healthcare Lanka LW  
+ GRN No.  
+   23288  Contact  
+ Receipt Date  
+   09 Oct 2020  PO No.  
+    BLR2007006  
+ Receipt Type  
+   AO  Invoice No.  
+    2020005102  
+ Location  
+   Consumable Stores   Wit  Invoice Date  
+   10 Oct 2020  
+ Print Date  
+  09 Oct 2020 09.213 08 AM  User  
+    6.150  I.N.  
+ Code  
+Item Name  
+ Batch No.  
+ Qty UOM  
+ Expiry Date  
+ Bonus  
+ SP/MRP  
+ Rate  
+Discount  
+ Addi tion  
+Amoun  L0A941  
+ PurlIon Gel  
+ 25112022  
+ 10 Nos  
+ 25 Nov 2022  
+ 0  
+ 1,425.24  
+ 1,069.20  
+ 0.00  
+0.00  
+ 10,92.0  

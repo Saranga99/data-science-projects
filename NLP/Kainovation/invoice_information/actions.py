@@ -58,6 +58,8 @@ class Actions(object):
         text = re.sub('\"', '', str(text))
         # removing any reference to outside text
         text = re.sub("[\(\[].*?[\)\]]", "", str(text))
+        text = text.replace("�", " \n")
+        text = text.replace(":", " ")
         return text
 
     # extract all emails in input text
@@ -67,12 +69,12 @@ class Actions(object):
         return re.findall(EMAIL_REG, text)
 
     # write to tempory text file
-    def write_to_txt(file):
-        for pagenumber, page in enumerate(file.pages(), start=1):
-            text = page.getText()
-            txt = open(f"invoice_page_{pagenumber}.txt", "a")
-            txt.writelines(text)
-            txt.close()
+    def write_to_txt(text):
+        lines = [text]
+        with open('temp/temp_txt.txt', 'w') as f:
+            for line in lines:
+                f.write(line)
+                # f.write('')
 
     # mobile number
     def get_mobile_numbers(text):
@@ -133,7 +135,28 @@ class Actions(object):
     # getinvoice amount
     def get_invoice_number(text):
         text = text.lower()
-        temp_corpus = text[get_tag_position(
-            "Invoice No.", text, direction='reverse'):]
+        # st.write(text)
+        # for txt in text:
+        #     if txt == "invoice no" or txt == "invoice number":
+        #         text = "yes"
+        #     else:
+        #         text = "no"
+        # valid_invoice_tags = ['invoice', 'lading',
+        #                       'bill no', "invoice number", "ao invoice no.", "tax", "items"]
+        # output = [i for i in text if i in valid_invoice_tags]
+        # if len(output) > 0:
+        #     return "invoice"
+        # else:
+        #     return "not"
 
-        return temp_corpus
+        matches = re.findall(
+            r'(?<=\binvoice )(?:.*?)(?= invoice\b)', text, flags=re.DOTALL)
+        for i, match in enumerate(matches):
+            # match=(f'\nMatch {i + 1}:\n', match, sep='')
+            match = match.split(" ")
+        #print(f'\nMatch {i + 1}:\n', match, sep='')
+            for i in match:
+                if len(i) == 10 and i.isdecimal():
+                    no = i
+
+        return no

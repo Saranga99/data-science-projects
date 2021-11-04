@@ -72,7 +72,7 @@ def clean_text(text):
     # Convert to string
     text = text.decode('utf-8')
     # Replace "\r\n" with spaces
-    text = text.replace("\r\n", " ")
+    text = text.replace("((\r\n))", " ")
     # Remove any double spaces
     text = re.sub(" +", " ", text)
     # removing new line characters
