@@ -1,62 +1,95 @@
-5 55 34PM      692.00'  1,240.00  10  1,069.2704 )  
- EnD  '‘'?4D  10, 2.00  10+2.00      
- GrossValue  Total Discount  VA1  NetValue Rs.  Invoice No.  
-    Invoice Data  
-    W/H Code  Payment Type   Order No   s.  
- k001 232  10/07/2020  Cl IN  DEL  A44392  305102'  )34440  LR2007 220  ,   
- of 3  Date II Time  Authorised By  NON TAX INVOICE  Customer Code  Customer Name  Address  ustomer Vat No  ales Rep  100034  HEMAS HOSPITALS  LTD   Wattala  I  
- NO. 36. BRISTOL STREET. COL  Stock  Consumables  Cl INSR06 Godfrey Bath  10,690.00  10 690.00  Gross Amt.   Deductions    Additions  Net Amount   Oispatth mode  Payment mode   User  6722  Place Of Delivery   Hemas Hospitals  Ltd  396 Necomba Rood  Waddle  In words  LXR TEN THOUSAND SIX HUNDRED NINETY ONLY  Payment Terms   Within 30 Days  Within 45 Days  Delivery 1erms   Qty Department  10  
- Pur d law   WTL  Item Name  
- From Date  
- To Date  purilan Gel  
- 07 Oct 2020  
- 07 Oct 2020  Authxised Signatory   Purchase Order  Supplier  
-   Su whine Heald care Lanka Ltd  Address  
-   CiumrnyColombo,  icrribo Sri Larka  Pin Cale  PO No.  PO Date  PO Type  Contact Person  131.1120071306  07 Ott  2020  0005A unable PG  10 Nos  
- 10 59.00  10,690.00  Other Terms    Other Terms  Note   This purchase order is valid aily for 14 days.P0 not valid without Authorised Signature  Remarks    Page 1 of 1  Authorised Signatory   rbiew.go  II  
- LOA941  PurIlan Gel  SI.No. Item Code  fIrtherni St bre Mr   Within 45 Days  Cheque  Mode of  Payment  Terms   
- Gross    
- 10692 000   
- Discount    
+1•ir r mr   r  me roshmika enterprises  ' no. 163ic, kalupila niwandama jaela  ‘el lothne 077 6325803 fax   011 2436362  e mail   inforoshmika@gmail.com  invoice  •  
+ 44.1 ,4i°  
+c 34 11 t  no qty  description  @  rs.  cts.  01 jo  coro .. azz,  7e°   o c• <cf., co. ,..  02 _gee,.  cr., arc  p  61   totalm   received by  gee  date • at  i.no.  
+ code  
+item name  batch no.  
+• qty uom  expiry date  
+bonus  discount  
+ addition  
+ amoun  sr/mfu3  
+rate  •  0.00  
+ 21,600.0  3,600 nos  
+ 01 may 2022  0  
+8.19  
+6.00  
+ 0.00  5c0n278  
+ nurse caps    within 30 days  mode 01  payment  terms    cheque   
+ gross  
+ 21600.000   
+ discount  
+    
  0.000   
- Additions    
- 0.000  Net Amount  
- 10692.000  Checked a  
- erified By  
- Approved By   nd oe///  eceived By   Goods Receipt Note  Supplier  
-  Sunshine Healthcare Lanka LW  
- GRN No.  
-   23288  Contact  
- Receipt Date  
-   09 Oct 2020  PO No.  
-    BLR2007006  
- Receipt Type  
-   AO  Invoice No.  
-    2020005102  
- Location  
-   Consumable Stores   Wit  Invoice Date  
-   10 Oct 2020  
- Print Date  
-  09 Oct 2020 09.213 08 AM  User  
-    6.150  I.N.  
- Code  
-Item Name  
- Batch No.  
- Qty UOM  
- Expiry Date  
- Bonus  
- SP/MRP  
- Rate  
-Discount  
- Addi tion  
-Amoun  L0A941  
- PurlIon Gel  
- 25112022  
- 10 Nos  
- 25 Nov 2022  
+ additions  
+ 0.000   
+ net amount  
+ 21600.000  chedr e nd verified by  eceived by   approved by   4470   
+i  ,c4en  ^9,i•  <104 jv  goods receipt note  supplier    roshrnilca enterprises  grn no.    23266  contact  receipt data    07 oct 2020  pc) no.    61r2006871  receipt type    ao  invoke no.    681  location    consumable stores   wtl  invoice date    07 oct 2020  print data    07 oct 2020 12 35 01 pm  user    6450  item name  
+ batch no.  qty  
+ uom  
+ expiry date  
+bonus  
+ sp/mrp  
+rabe  
+ discount  
+ adcblion  
+amoun  i.no.  
+ code  0ev405  
+ urometer 250m1  
+ 01052022  20 number  
+ 01 may 2022  
  0  
- 1,425.24  
- 1,069.20  
- 0.00  
-0.00  
- 10,92.0  
+ 933.31  
+ 700.00  
+ 0.00  0.00  
+  14,000.0   within 30 days  mode of  payment  terms  .40)0.000  0.000  0.000  '4000.000    cheque  gross    discount    additions ;  net amount    eceived by   approved by   \fir  checked and, e fied by  goods receipt note    23265  supplier     roshmika enterprises  grn no.  contact  receipt date    07 oct 2020  po no.    6lr2006890  receipt type    ao  invoice no.    0681  location    consumable stores   vvtl  invoke date    07 oct 2020  print date    07 oct 202,0 12 27 33 pm  user    6450  supplier  
+    
+ pashmka enterprisfs  address  
+    
+ 173c  kakipila  is elasrl layairtardenepu,  colombo sri larks  pin code .  purchase order  po no.  
+    
+ b1r2005890  po date  
+    
+ 30 sep 2020  po type  
+    
+ cur mut nage pc  •  contact person  
+ .  si.no.  
+ item code  
+ item name  qty units  rate  
+ disc  nt ltd  389, n4combo road  wattala  in words  lkr fourteen thousand only .  dispatch mode   gross amt.   deductions   additions    net amount •  4,000.00  4,000.00  payment terms    within 30 days  delivery terms   other terms    00er terms  note   this purchase order is valid cmy for 14 days.p0 not valid without authorised signature  f)riivrry 8therlpir•  from date  
+ to date  
+ qty  30 sop 2020  
+ 30 sop 2020  
+ 20  6  deparinlent  our d insag   wit  item name  °rooter 233m1  remarks  
+    4w wised signatcry   ,  
+ page 1 of i  authorl  
+ natcry   i  v  purchase order  supplier  
+    
+ fccishmikaenterbrises  
+ po no.  
+ !  
+ pi st7006871  address  
+    
+ 173c  
+ po date  
+    
+ 30 sep 2020  kai jolla  )a elasri jayawarcienepu,  
+ po type  
+ ;  
+ cu isla itthle po  colombo sri lapra  contact person  fin code   r  i  si.no.  
+ itan code  
+ iran name  
+ qty units  
+ rate  
+ disc.  a    t   4,000.00  payment mode,  
+ dispatch mode   
+ gross  user  6722  
+ deductions   place of delivery   
+ additions  hem as hospitals  ltd  389, negombo raul  wattala  in wards  lkii twenty folr thousand only  not  amt.      amount,  1  i4,000.00  24.000.00  payment terms    within 30 days  delivery terms   other teams    other terms  no  
+   this purchase order is valid only fix 14 dayspo not valid without authorised signature     printery crim chilr  qty  3,000  deparn  purchase  i{  ent    wtl  item name  
+ from date  
+ to date  nmse caps   
+ •  
+ 3d sep 2020  
+ 30 sep 2020  remarks  
+    autiaxised signatory   
+ authorld signatory   a  .        ..._  

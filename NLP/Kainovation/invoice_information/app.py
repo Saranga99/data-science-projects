@@ -34,12 +34,14 @@ if extract and uploaded_file is not None:
     cleaned_text = Actions.clean_text(text)
 
     # st.subheader("cleaned")
-    st.write(cleaned_text)
+    # st.write(cleaned_text)
 
     Actions.write_to_txt(cleaned_text)
 
     st.write("Invoice No. : ", Actions.get_invoice_number(cleaned_text))
-    emails = Actions.get_emails(cleaned_text)
+    date = Actions.get_dates(cleaned_text)[0]
+    st.write(date)
+    emails = Actions.get_emails(text)
     if len(emails) > 0:
         st.write("Email          : ", emails[0])
     st.write("Mobile Numbers : ", Actions.get_mobile_numbers(cleaned_text))

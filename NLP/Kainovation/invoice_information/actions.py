@@ -44,6 +44,7 @@ class Actions(object):
 
     # clean text
     def clean_text(text):
+        text = text.lower()
         # Remove any double spaces
         text = re.sub(" +", " ", text)
         # removing new line characters
@@ -104,18 +105,14 @@ class Actions(object):
 
     # get dates
     def get_dates(text):
-        try:
-            matches = list(datefinder.find_dates(text))
-            if len(matches) > 0:
-                # date returned will be a datetime.datetime object. here we are only using the first match.
-                for i in range(len(matches)):
-                    st.write("Date      : ", matches[i])
-            else:
-                st.write('No dates found')
-        except:
-            st.write("Date      : invalid date")
+        start_index = text.find("invoice date")
+        end_index = start_index + len("invoice date")+30
+        date = text[start_index:end_index]
+        date = list(datefinder.find_dates(date))
+        return date
 
     # extract text
+
     def extract_text(path):
         doc = fitz.open(path)
         text = ""
