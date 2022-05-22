@@ -1,0 +1,1 @@
+[{"stock_name": "TSLA", "up_trends": true, "price_trigger": 50}, {"stock_name": "AAPL", "up_trends": true, "price_trigger": 150}, {"stock_name": "NVDA", "up_trends": false, "price_trigger": 150}, {"stock_name": "FB", "up_trends": false, "price_trigger": 250}, {"stock_name": "WIX", "up_trends": true, "price_trigger": 50.0}]
