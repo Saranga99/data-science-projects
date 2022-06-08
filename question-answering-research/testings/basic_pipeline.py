@@ -38,7 +38,7 @@ def tutorial1_basic_qa_pipeline():
     launch_es()
 
     # Connect to Elasticsearch
-    document_store = ElasticsearchDocumentStore(host="localhost", username="", password="", index="document")
+    document_store = ElasticsearchDocumentStore(host="localhost", username="", password="", index="sampledata")
 
     # ## Preprocessing of documents
     #
@@ -53,7 +53,7 @@ def tutorial1_basic_qa_pipeline():
 
     # Let's first fetch some documents that we want to query
     # Here: 517 Wikipedia articles for Game of Thrones
-    doc_dir = "../data/tutorial1"
+    doc_dir = "../data/sampleData"
     # s3_url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt1.zip"
     # fetch_archive_from_http(url=s3_url, output_dir=doc_dir)
 
@@ -127,7 +127,7 @@ def tutorial1_basic_qa_pipeline():
 
     ## Voilà! Ask a question!
     prediction = pipe.run(
-        query="Who is the father of Arya Stark?", params={"Retriever": {"top_k": 10}, "Reader": {"top_k": 5}}
+        query="what are toilet training issues?", params={"Retriever": {"top_k": 10}, "Reader": {"top_k": 5}}
     )
 
     # prediction = pipe.run(query="Who created the Dothraki vocabulary?", params={"Reader": {"top_k": 5}})
