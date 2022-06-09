@@ -116,6 +116,7 @@ celerybeat.pid
 .venv
 env/
 venv/
+models/
 ENV/
 env.bak/
 venv.bak/
@@ -151,5 +152,3 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-validate/*/*.pdf*
-validate/*.xlsx
