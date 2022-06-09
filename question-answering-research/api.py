@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from haystack.document_stores.elasticsearch import ElasticsearchDocumentStore
 from haystack.nodes import FARMReader, BM25Retriever
 from haystack.pipelines import ExtractiveQAPipeline
-
 doc_store = ElasticsearchDocumentStore(
     host='localhost',
     username='', password='',
