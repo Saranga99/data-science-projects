@@ -17,6 +17,7 @@ class QAPipeline():
 
         #retriever
         self.retriever=DensePassageRetriever.load("models/retriever",document_store)
+        # document_store.update_embeddings(retriever=self.retriever)
         #reader
         self.reader=FARMReader(model_name_or_path="models/reader")
         #pipeline
