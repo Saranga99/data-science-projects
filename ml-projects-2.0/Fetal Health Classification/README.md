@@ -12,7 +12,6 @@ In light of what was mentioned above, Cardiotocograms (CTGs) are a simple and co
 ### Data
 
 This dataset contains 2126 records of features extracted from Cardiotocogram exams, which were then classified by three expert obstetritians into 3 classes:
-
-   Normal
-   Suspect
-   Pathological
+* Normal
+* Suspect
+* Pathological
