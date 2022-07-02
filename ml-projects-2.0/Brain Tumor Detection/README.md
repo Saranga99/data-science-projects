@@ -1,15 +1,17 @@
-# Time Series Analysis - USA Airlines Passengers.
+# Brain Tumor Detection.
 
 ### Context
 
-Start here! Analyse and Forecast Time Series data of US Air Passengers
+A brain tumor is a mass or growth of abnormal cells in your brain. Many different types of brain tumors exist. Some brain tumors are noncancerous (benign), and some brain tumors are cancerous (malignant).
 
 ### Data
 
-This dataset provides monthly totals of a US airline passengers from 1949 to 1960. This dataset is taken from an inbuilt dataset of R called AirPassengers.
+The image data that was used for this problem is Brain MRI Images for Brain Tumor Detection. It conists of MRI scans of two classes:
+
+NO - no tumor, encoded as 0
+YES - tumor, encoded as 1
+Unfortunately, the data set description doesn't hold any information where this MRI scans come from and so on.
 
 ### References
 
-https://machinelearningmastery.com/xgboost-for-regression/
 
-https://machinelearningmastery.com/feature-importance-and-feature-selection-with-xgboost-in-python/
