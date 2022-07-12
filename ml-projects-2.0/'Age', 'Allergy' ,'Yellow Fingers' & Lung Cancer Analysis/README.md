@@ -6,7 +6,7 @@ The effectiveness of cancer prediction system helps the people to know their can
 
 ### Data
 
-Total no. of attributes:16\n
+Total no. of attributes:16"\n"
 No .of instances:284
 Attribute information:
 
