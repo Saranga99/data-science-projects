@@ -1,3 +1,5 @@
 streamlit
 numpy
 pandas
+docx2txt
+transformers
