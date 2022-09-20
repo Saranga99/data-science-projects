@@ -8,3 +8,9 @@
 This table contains information publicly available on the Coursera website. 
 
 The columns are: Name, University, Difficulty Level, Rating, Link, Description and Skills.
+
+## Recommendation System
+
+![alt text](image.png)
+
+
