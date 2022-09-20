@@ -6,15 +6,14 @@ This is a dataset i generated during a hackathon for project purpose. Here i hav
 Article about the dataset generation : https://medium.com/analytics-vidhya/web-scraping-and-coursera-8db6af45d83f
 
 ### Data
-
 This dataset contains mainly 6 columns and 890 course data. The detailed description:
 
-    course_title : Contains the course title.
-    course_organization : It tells which organization is conducting the courses.
-    courseCertificatetype : It has details about what are the different certifications available in courses.
-    course_rating : It has the ratings associated with each course.
-    course_difficulty : It tells about how difficult or what is the level of the course.
-    coursestudentsenrolled : It has the number of students that are enrolled in the course.
+* course_title : Contains the course title.
+course_organization : It tells which organization is conducting the courses.
+courseCertificatetype : It has details about what are the different certifications available in courses.
+course_rating : It has the ratings associated with each course.
+course_difficulty : It tells about how difficult or what is the level of the course.
+coursestudentsenrolled : It has the number of students that are enrolled in the course.
 
 ### References
 
