@@ -9,12 +9,12 @@ Article about the dataset generation : https://medium.com/analytics-vidhya/web-s
 
 This dataset contains mainly 6 columns and 890 course data. The detailed description:
 
-  course_title : Contains the course title.
-  course_organization : It tells which organization is conducting the courses.
-  courseCertificatetype : It has details about what are the different certifications available in courses.
-  course_rating : It has the ratings associated with each course.
-  course_difficulty : It tells about how difficult or what is the level of the course.
-  coursestudentsenrolled : It has the number of students that are enrolled in the course.
+    course_title : Contains the course title.
+    course_organization : It tells which organization is conducting the courses.
+    courseCertificatetype : It has details about what are the different certifications available in courses.
+    course_rating : It has the ratings associated with each course.
+    course_difficulty : It tells about how difficult or what is the level of the course.
+    coursestudentsenrolled : It has the number of students that are enrolled in the course.
 
 ### References
 
