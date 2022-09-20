@@ -6,4 +6,5 @@
   4. Student Flexibility Analysis and Classification
   5. 'Age', 'Allergy' ,'Yellow Fingers' & Lung Cancer Analysis
   6. Artifical Neural Networks (ANN Tutorials)
+  7. Coursera Course Recommendation
 
