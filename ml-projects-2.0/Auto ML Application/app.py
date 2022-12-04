@@ -4,8 +4,8 @@ import pandas_profiling
 from streamlit_pandas_profiling import st_profile_report
 import os
 #ML
-from pycaret.regression import setup, compare_models, save_model
-from pycaret.classification import setup, compare_models, save_model
+# from pycaret.regression import setup, compare_models,pull, save_model
+from pycaret.classification import setup, compare_models,pull, save_model
 
 
 with st.sidebar:
@@ -35,6 +35,22 @@ if selection=="Profiling":
 if selection=="ML":
     st.title("Machine Learning Modeling")
     ml_type=st.selectbox("Select your Problem type",["Regression","Classification"])
+    chosen_target=st.selectbox("Select Your Target",df.columns)
+    if st.button('Run Modelling'):
+        if ml_type=="Regression":
+            pass
+        
+        if ml_type=="Classification":
+            setup(df, target=chosen_target)
+            setup_df = pull()
+            st.dataframe(setup_df)
+            best_model = compare_models()
+            compare_df = pull()
+            st.dataframe(compare_df)
+            save_model(best_model, 'best_model')
+
+
+
 
 if selection=="Download":
     pass
