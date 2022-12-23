@@ -5,7 +5,7 @@ from streamlit_pandas_profiling import st_profile_report
 import os
 #ML
 # from pycaret.regression import setup, compare_models,pull, save_model
-from pycaret.classification import setup, compare_models,pull, save_model
+from pycaret.classification import *
 
 
 with st.sidebar:
@@ -41,13 +41,15 @@ if selection=="ML":
             pass
         
         if ml_type=="Classification":
-            setup(df, target=chosen_target)
-            setup_df = pull()
-            st.dataframe(setup_df)
-            best_model = compare_models()
-            compare_df = pull()
-            st.dataframe(compare_df)
-            save_model(best_model, 'best_model')
+            st.write(type(chosen_target))
+            setup(data=df, target=chosen_target,session_id=123)
+            # setup_df = pull()
+            # st.dataframe(setup_df)
+            # best_model = compare_models()
+            # compare_df = pull()
+            # st.dataframe(compare_df)
+            # save_model(best_model, 'best_model')
+            pass
 
 
 
