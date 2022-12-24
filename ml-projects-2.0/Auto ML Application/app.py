@@ -3,6 +3,10 @@ import pandas as pd
 import pandas_profiling
 from streamlit_pandas_profiling import st_profile_report
 import os
+import h2o
+from h2o.automl import H2OAutoML
+# Start the H2O cluster (locally)
+h2o.init()
 #ML
 # from pycaret.regression import setup, compare_models,pull, save_model
 from pycaret.classification import *
@@ -16,7 +20,7 @@ with st.sidebar:
     # st.radio()
 
 if os.path.exists("source_data.csv"):
-    df=pd.read_csv("source_data.csv",index_col=None)
+    df=pd.read_csv("source_data.csv")
 
 if selection=="Upload":
     st.title("Upload your Data")
@@ -41,8 +45,7 @@ if selection=="ML":
             pass
         
         if ml_type=="Classification":
-            st.write(type(chosen_target))
-            setup(data=df, target=chosen_target,session_id=123)
+            # setup(df, target = chosen_target, preprocess=True)
             # setup_df = pull()
             # st.dataframe(setup_df)
             # best_model = compare_models()
