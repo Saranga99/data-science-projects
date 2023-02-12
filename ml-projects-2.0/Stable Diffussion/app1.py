@@ -77,3 +77,55 @@ class StableDiffusionLoader:
 
     def __len__(self):
         return len(self.prompt)
+
+if __name__ == '__main__':
+   
+    SAVE_LOCATION = 'prompt.jpg'
+    # Create the page title 
+    st.set_page_config(page_title='Diffusion Model generator', page_icon='fig/favicon.ico')
+    # Create page layout
+    with open('style.css') as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    st.title('Image generator using Stable Diffusion')
+    st.caption('An app to generate images based on text prompts with a :blue[_Stable Diffusion_] model :sunglasses:')
+    # Create a sidebar with text examples
+    with st.sidebar:
+        # Selectbox
+        # st.image('fig/hf.png')
+        add_selectbox = st.sidebar.selectbox(
+        "Prompt examples",
+        (
+            "None",
+            "Van Gogh painting with squirrels eating nuts", 
+            "Homer Simpson on a computer wearing a space suit",
+            "Mona Lisa with headphones on",
+            "A digital artwork of a roborovski hamster dressed in blue wizards clothing casting a thunderstorm with lightning",
+            "A model wearing a scuba diving suit",
+            "A looney tunes character driving a car",
+            "Optimus Prime on top of a surf board",
+            "Albert Einstein with a goofy smile",
+            "Nottingham Forest football team lifting the FA Cup"
+        ), index=0)
+        st.markdown('Use the above drop down box to generate _prompt_ examples')
+        st.text('Application by Gary Hutson')
+    
+    # Create text prompt
+    prompt = st.text_input('Input the prompt desired')
+    if add_selectbox != 'None' or prompt is None:
+        prompt = add_selectbox
+
+    # Handle if the text box does not have any content in
+    if len(prompt) > 0:
+        st.markdown(f"""
+        This will show an image using **stable diffusion** of the desired {prompt} entered:
+        """)
+        print(prompt)
+        # Create a spinner to show the image is being generated
+        with st.spinner('Generating image based on prompt'):
+            sd = StableDiffusionLoader(prompt)
+            sd.generate_image_from_prompt(save_location=SAVE_LOCATION)
+            st.success('Generated stable diffusion model')
+
+        # Open and display the image on the site
+        image = Image.open(SAVE_LOCATION)
+        st.image(image)  
