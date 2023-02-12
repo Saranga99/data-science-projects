@@ -3,10 +3,10 @@ import pandas as pd
 import pandas_profiling
 from streamlit_pandas_profiling import st_profile_report
 import os
-import h2o
-from h2o.automl import H2OAutoML
+# import h2o
+# from h2o.automl import H2OAutoML
 # Start the H2O cluster (locally)
-h2o.init()
+# h2o.init()
 #ML
 # from pycaret.regression import setup, compare_models,pull, save_model
 from pycaret.classification import *
@@ -45,13 +45,13 @@ if selection=="ML":
             pass
         
         if ml_type=="Classification":
-            # setup(df, target = chosen_target, preprocess=True)
-            # setup_df = pull()
-            # st.dataframe(setup_df)
-            # best_model = compare_models()
-            # compare_df = pull()
-            # st.dataframe(compare_df)
-            # save_model(best_model, 'best_model')
+            setup(df, target = chosen_target, preprocess=True)
+            setup_df = pull()
+            st.dataframe(setup_df)
+            best_model = compare_models()
+            compare_df = pull()
+            st.dataframe(compare_df)
+            save_model(best_model, 'best_model')
             pass
 
 
